@@ -1,0 +1,493 @@
+
+
+
+.tailLine{
+    height: 50%;
+}
+.lineDroiteDiv{
+    display: flex;
+    width: 100px;
+    height: 3px;
+    
+}
+.line {
+  
+    width: 3px;
+    height: 0px;
+    transition: height 0.3s ease-out;
+    z-index: 4;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
+}
+.lineDroite{
+    width: 0px;
+    height: 3px;
+    transition: width 0.5s ease-out;
+    z-index: 4;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, rgb(255, 92, 92) , rgb(255, 92, 92),  red, #252627); 
+}
+.hautDeLine{
+    width: 18px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px 10px rgb(255, 132, 132);
+}
+
+.couleurLineFinHB{
+
+    background-image: linear-gradient(to bottom, #252627 , red, rgb(255, 92, 92), red, #252627); /* Dégradé pour la ligne */
+}
+.couleurLineFinH{
+    
+    background-image: linear-gradient(to bottom,  rgb(255, 255, 255), red,  rgb(255, 92, 92)); /* Dégradé pour la ligne */
+}
+.couleurLineRougeH{
+    
+    background-image: linear-gradient(to bottom,  rgb(255, 92, 92), red); /* Dégradé pour la ligne */
+}
+.couleurLineRougeB{
+    
+    background-image: linear-gradient(to bottom, red, rgb(255, 92, 92)); /* Dégradé pour la ligne */
+}
+.fondCircle{
+    width: 70px;
+    height: 70px;
+}
+.circle {
+    
+    background-color: rgba(255, 89, 89, 0.869); /* Lumière circulaire semi-transparente */
+    box-shadow: 0 0 20px 10px rgb(255, 132, 132); /* Ombre externe pour l'effet de lumière */
+    border-radius: 50%;
+    visibility: hidden; /* Initialement caché */
+    opacity: 0; /* Rendre l'élément complètement transparent */
+    z-index: 10; /* Assurez-vous qu'il est au-dessus des autres éléments */
+    transition: visibility 3s, opacity 0.5s linear; /* Transition pour l'opacité */
+}
+
+
+
+.emojyImage{
+    width: 30px;
+    height: 30px;
+}
+.emojyJeu{
+    width: 40px;
+    height: 30px;
+}
+.emojyMobile{
+    width: 23px;
+    height: 41px;
+}
+.emojyIA{
+    width: 35px;
+    height: 35px;
+}
+
+
+
+
+.lampe3{
+    color: white;
+    border-radius: 10px;
+    flex-grow: 1;
+    padding: 25px;
+}
+.lampe {
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    background-image: radial-gradient(circle, #d31717, #af1717, #861f1f, #501e1e, #342121, #191919,#191919, #191919);
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    opacity: 0;
+}
+
+.fleche{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    padding: 15px;
+    padding-top: 72px;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #fff;
+    z-index: 6;
+    height: 650px; /* Hauteur de la ligne */
+    width: 3px; /* Épaisseur de la ligne */
+    margin-left: 30px;
+}
+
+.conteneurCanvaDemineur{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.event{
+    
+    padding: 20px;
+    margin: 20px;
+    height: 360px;
+    overflow: auto;
+}
+.heightImage{
+    overflow: hidden;
+    min-width: 400px;
+    height: 400px;
+    
+}
+.img1{
+
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 20px;
+    cursor: pointer;
+    
+}
+.messages{
+    width: 100%;
+}
+.resp{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+ 
+        visibility: hidden; /* Initialement caché */
+        opacity: 0; /* Rendre l'élément complètement transparent */
+        z-index: 11; /* Assurez-vous qu'il est au-dessus des autres éléments */
+        transition: visibility 0.5s, opacity 0.7s linear; /* Transition pour l'opacité */
+    
+}
+
+.description{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    
+    flex-wrap: wrap;
+    background-color:  #323334;
+    /* background-color:  #1f1515; */
+    border-radius: 20px;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #484848;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5); /* Ombre portée */
+}
+
+.techno{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    padding-top: 20px ;
+    color: #ffffff;
+    flex-grow: 3;
+    
+}
+
+.redirection{
+
+    display: flex;
+    justify-content: space-between;
+   
+    align-items: center; 
+}
+
+.btnDetail{
+    display: flex;
+    justify-content: right;
+    align-items: center; 
+    padding-right: 20px;
+    padding: 10px;
+    height: 100%;
+}
+.radiusDubas{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+video{
+
+    max-width: 400px;
+    max-height: 400px;
+    border-top-right-radius: 20px;
+}
+
+.recommencerdiv{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.recommencerbtn{
+
+    border-radius: 20px;
+    background-color:#191919;
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
+    padding: 9px;
+    margin-right: 85px;
+}
+
+.drapeau{
+
+    border-radius: 50%;
+    background-color:#ffffff;
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-right: 85px;
+}
+
+
+
+.chat-window {
+    max-width: 400px;
+    max-height: 400px;
+    min-height: 400px;
+    min-width: 400px;
+    border: 2px solid #ccc;
+    overflow-y: scroll;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message-container {
+    display: flex;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.message-container.user {
+    justify-content: flex-end;
+}
+
+.message-bubble {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 5px;
+    max-width: 70%;
+}
+
+.user .message-bubble {
+    background-color: #007bff;
+    color: #fff;
+    text-align: right;
+}
+
+.bot .message-bubble {
+    background-color: #ccc;
+    color: #000;
+}
+
+.input-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    border-top: 2px solid #ccc;
+    background-color: #f8f8f8;
+    width: 100%;
+    padding: 10px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.fondEtoiler{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background-image: linear-gradient(to bottom, #000000, rgba(37, 38, 39, 0.35), #25262700, #19191961, #191919);
+}
+
+
+h2{
+
+    padding-top: 30px;
+}
+
+
+@media screen and (min-width: 800px) {
+
+    .chat-window {
+        border-radius: 10px;
+    }
+   
+}
+@media screen and (min-width: 1400px) {
+
+    .description{
+        width: 1200px;
+    }
+   
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1150px) {
+    .lineDroiteDiv{
+        display: none;
+    }
+   .timeline {
+        display: none;
+    }
+    .description{
+        margin-top: 15px;
+    }
+
+    .event{
+       
+        padding: 20px;
+        margin: 10px;
+    }
+    .fleche{
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 800px) {
+
+    .btnDetail{
+        flex-grow: 1;
+    }
+
+    .recommencerbtn{
+
+        padding: 9px;
+        margin: 5px;
+    }
+    
+    .drapeau{
+    
+        padding-left: 7px;
+        padding-right: 7px;
+        margin: 10px;
+    }
+
+    .chat-window {
+        max-width: 100%;
+        max-height: 200px;
+        min-height: 200px;
+        min-width: 100%;
+    }
+
+    
+    .event{
+        padding: 10px;
+        margin: 10px;
+        height: max-content;
+        max-height: 360px;
+    }
+
+    .description{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .redirection{
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .img1{
+        border-top-right-radius: 0px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .heightImage{
+        overflow: hidden;
+        width: 100%;
+        min-width: 100%;
+        max-height: 200px;
+        display: flex;
+        justify-content: center; /* Centre l'image horizontalement */
+        align-items: center; /* Centre l'image verticalement */
+    }
+
+   
+    .fleche{
+        padding: 10px;
+    }
+
+    h2{
+
+        padding-top: 20px;
+    }
+}
+@media screen and (max-width: 600px) {
+
+    .description{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    h2{
+
+        padding-top: 15px;
+    }
+
+    .techno{
+
+        padding: 0px;
+        padding-top: 10px ;
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width: 500px) {
+
+    .heightImage{
+        overflow: hidden;
+        width: 100%;
+
+        max-height: 100px;
+        display: flex;
+        justify-content: center; /* Centre l'image horizontalement */
+        align-items: center; /* Centre l'image verticalement */
+    }
+
+    .event{
+        height: 250px;
+        padding: 10px;
+        margin: 10px;
+    }
+}

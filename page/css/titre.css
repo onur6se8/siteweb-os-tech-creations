@@ -1,0 +1,310 @@
+.alignerAuCentreSautDeLigne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #fff;
+}
+.alignerAuCentreMemeLigne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    color: #fff;
+    z-index: 10;
+}
+
+
+
+.separateurPaddingGrand{
+    padding: 200px;
+}
+.separateurPadding{
+    padding: 100px;
+}
+.separateurPaddingPetit{
+    padding: 50px;
+}
+.separateurPaddingTresPetit{
+    padding: 25px;
+}
+
+picture img{
+
+    width: 100%;
+}
+
+.element-transition {
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    opacity: 0;
+}
+.element-transition-droite{
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    opacity: 0;
+}
+
+.imgLesPrincipalesSolutions{
+    position: relative;
+    max-height: 700px;
+    max-width: 700px;
+    object-fit: cover; /* Empêche la déformation, coupe l'image si nécessaire */
+    background-size: cover; /* La même chose mais pour l'image mis en fond d'un div par exemple et il prend tout le div */
+    border-radius: 20px;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
+    border: 1px solid #080834  ;
+    z-index: 5;
+}  
+.imgCentre{
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #363636;
+    z-index: 3;
+}
+
+.tailleTitreAccueil{
+    font-size: 50px; 
+}
+h1 {
+    position: relative;
+    z-index: 6;
+    font-size: 30px;
+    /* font-family: 'Playfair Display'; */
+
+    margin: 0px;
+    font-family: 'Cormorant Garamond';
+}
+
+h2 {
+    position: relative;
+    z-index: 6;
+    font-size: 27px;
+    text-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5); /* Ombre du texte */
+  
+    font-family: 'Cormorant Garamond';
+}
+.h3tailh2{
+    position: relative;
+    z-index: 6;
+    font-size: 27px;
+    text-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5); /* Ombre du texte */
+    
+    font-family: 'Cormorant Garamond';
+}
+h3{
+    position: relative;
+    z-index: 6;
+    font-size: 24px;
+    font-family: 'Cormorant Garamond';
+}
+
+p{
+    font-family: 'Inter';
+    font-size: 16px;
+}
+
+li {
+    display: list-item;
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Inter'
+}
+
+ul {
+    font-size: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+    font-family: 'Inter'
+}
+ul p {
+    font-size: 15px;
+}
+.competences li {
+    font-size: 19px;
+}
+
+a{
+    color: rgb(95, 206, 216);
+    font-family: 'Inter'
+}
+a:hover{
+    color: rgb(166, 166, 166);
+}
+
+.aDroite{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
+span{
+    font-family: 'Inter'
+}
+input{
+    
+        font-family:  "Segoe UI";
+}
+
+
+
+@media screen and (min-width: 1343px) {
+
+    .alignerMemeLignePlus1343{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: row;
+        color: #fff;
+    } 
+}
+@media screen and (max-width: 1343px) {
+
+    .alignerCentreMoins1343{
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        color: #fff;
+    }
+}
+@media screen and (max-width: 1150px) {
+
+
+    h1 {
+       
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+    .h3tailh2{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 22px;
+    }
+
+
+
+    .separateurPaddingGrand{
+        padding: 100px;
+    }
+    .separateurPadding{
+        padding: 50px;
+    }
+    .separateurPaddingPetit{
+        padding: 25px;
+    }
+    .separateurPaddingTresPetit{
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+    h1 {
+       
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+    .h3tailh2{
+        font-size: 23px;
+    }
+    h3{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 900px) {
+
+    .aDroite{
+        flex-wrap: wrap;
+    }
+
+}
+@media screen and (max-width: 700px) {
+
+    h1 {
+       
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+    .h3tailh2{
+        font-size: 22px;
+        margin: 0px;
+    }
+    h3{
+        font-size: 19px;
+    }
+
+
+    .separateurPaddingGrand{
+        padding: 50px;
+    }
+    .separateurPadding{
+        padding: 25px;
+    }
+    .separateurPaddingPetit{
+        padding: 15px;
+    }
+    .separateurPaddingTresPetit{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    h1 {
+       
+        font-size: 23px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+    .h3tailh2{
+        font-size: 21px;
+    }
+    h3{
+        font-size: 18px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    h1 {
+       
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+    .h3tailh2{
+        font-size: 19px;
+    }
+    h3{
+        font-size: 17px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+}

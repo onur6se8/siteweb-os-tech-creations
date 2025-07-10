@@ -1,0 +1,540 @@
+.map-frame {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border: 0px;
+    border-radius: 50px;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+
+.divparents{
+    padding: 0px 20px 20px 20px; 
+    margin: 50px 10px 10px 10px; 
+    border-radius: 50px;
+    background-image: url("/page/image/serrageDeMain4.jpg");
+    background-color: white;
+    background-size: cover;           /* remplit tout le div */
+    background-position: center;      /* centre l’image */
+    background-repeat: no-repeat;     /* évite la répétition */
+    background-attachment: fixed; 
+    
+    /* box-shadow: 0px 0px 10px rgb(255, 255, 255); */
+}
+#positiondiv {
+    position: relative;
+
+       
+  }
+  
+  #cornerblock {
+    position: absolute;
+    top: -80px;         /* un peu au-dessus du div principal */
+    right: 10px;        /* collé à droite */
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 16px 32px 21px 32px;
+    border-radius: 50px;
+     /* border: 1px solid rgb(115, 115, 115); */
+     border: 1px solid rgba(255, 255, 255, 0.2); 
+  font-weight: bold;
+    font-family:  "Segoe UI";
+    display: flex;
+    justify-content: center;   
+    align-items: center;  
+     /* box-shadow: inset  0px 0px 10px rgb(255, 255, 255);  */
+    font-size: 24px;
+    transition: all 0.6s ease;
+  }
+  #cornerblock:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: #d9d9d9;
+      backdrop-filter: blur(10px); /* flou arrière */
+  -webkit-backdrop-filter: blur(10px); /* pour Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+     box-shadow: none;
+    text-decoration: none;
+  }
+
+
+.divpub{
+
+    width: 100%;
+    min-height: 150px; /* hauteur minimale, peut grandir */
+    border-radius: 50px;
+    background-image: url("/page/image/serrageDeMain4.jpg");
+    background-color: white;
+    background-size: cover;           /* remplit tout le div */
+    background-position: center;      /* centre l’image */
+    background-repeat: no-repeat;     /* évite la répétition */
+    background-attachment: fixed; 
+    width: 100%;
+
+    /* box-shadow: 0px 0px 10px rgb(255, 255, 255); */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;     /* centre les blocs horizontalement dans le footer */
+    align-items: center;  
+   
+
+}
+.divpub h3{
+
+    color: #ffffff;
+    font-size: 34px;
+    margin: 0px;
+    padding: 30px 0px 30px 50px;
+    min-width: 300px;
+}
+ 
+.footer-button {
+    display: inline-block;
+    padding: 15px 35px 19px 35px;
+
+    background-color: #000000;
+    color: white;
+    font-weight: bold;
+    font-family:  "Segoe UI";
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+     /* box-shadow: inset  0px 0px 10px rgb(255, 255, 255);  */
+    border-radius: 50px;
+    font-size: 24px;
+    margin: 30px 30px 30px 30px;
+    text-decoration: none;
+   
+    transition: all 0.6s ease;
+    flex: 0 0 auto;
+  }
+  
+  .footer-button:hover {
+    
+    background-color: #00000000;
+      backdrop-filter: blur(10px); /* flou arrière */
+  -webkit-backdrop-filter: blur(10px); /* pour Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+    color: #d9d9d9;
+     box-shadow: none;
+    text-decoration: none;
+  }
+
+
+
+.centreFooter{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;     /* centre les blocs horizontalement dans le footer */
+    align-items: stretch;        /* fait en sorte que tous les blocs prennent la même hauteur */
+    gap: 50px;                   /* espace entre les blocs */
+    flex-wrap: wrap;             /* permet d'aller à la ligne si l'écran est trop petit */
+
+    
+    padding: 100px 30px 100px 30px;
+    background-color:#000000;
+    color: #ffffff; 
+    width: 100%;
+
+   /* border-top: 1px solid #363636;
+    border-bottom: 1px solid #363636;*/
+}
+.divContact  {    
+   
+    max-width: 350px;
+    flex: 1; /* chaque colonne prend exactement la même place */
+    box-sizing: border-box; /* la taille du div reste exactement le meme avec padding margin inclus */
+}
+.milieu{    
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.centreLogo{
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;     /* centre les blocs horizontalement dans le footer */
+    align-items: center;        /* fait en sorte que tous les blocs prennent la même hauteur */
+    flex-wrap: wrap;             /* permet d'aller à la ligne si l'écran est trop petit */
+
+    
+    padding: 0px;
+    width: 100%;
+
+}
+.centrerlogo{
+
+    position: absolute;
+    top: -480px;       
+    left: 100px;       
+    color: white;
+    background: rgba(93, 93, 93, 0.257);
+    padding: 45px 10px 40px 10px;
+    border-radius: 50px;
+    
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.284);
+  backdrop-filter: blur(10px); /* flou arrière */
+  -webkit-backdrop-filter: blur(10px); /* pour Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* contour léger */
+    width: 410px;
+    font-weight: bold;
+    font-size: 24px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+    gap: 20px;                   /* espace entre les blocs */
+  
+    flex: 1; /* chaque colonne prend exactement la même place */
+    box-sizing: border-box; /* la taille du div reste exactement le meme avec padding margin inclus */
+}
+
+
+.carte-3d {
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    z-index: 9999;
+    cursor: grab;
+  }
+
+
+.logofooter{
+
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+
+}
+.logofooter2{
+
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+
+}
+.divlogo{
+    display: flex;
+    flex-direction: row; /* pour que les éléments se placent verticalement */
+    align-items: center;     /* pour centrer horizontalement */
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    color: #ffffff;
+}
+.divlogo2{
+    display: flex;
+    align-items: center;     /* pour centrer horizontalement */
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.textFooterTaille{
+
+    font-size: 30px;
+}
+
+.textlogo{
+    margin: 0px;
+}
+
+.tailleTitre {
+
+    font-weight: bold;
+    font-size: 26px;
+}
+.tailleP {
+
+    font-size: 18px;
+    margin: 0px;
+}
+.taillelogo {
+
+    font-size: 26px;
+    color: #ffffff;
+}
+.taillelogo:hover{
+    
+    color: #9e9e9e;
+}
+.tailleemojy{
+    font-size: 24px;
+    position: relative; top: 3px;
+}
+
+
+
+
+
+.divContact a {
+    color: #ffffff; 
+    margin: 0 5px; 
+    text-decoration: none; /* Supprime le soulignement par défaut du lien */
+}
+
+.divContact a:hover {
+    color: #ffffff;
+}
+.divContact a:hover .souligner{
+    color: #9e9e9e;
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+.divContact a:hover .tailleemojy{
+    color: #9e9e9e;
+    text-decoration: none; /* Souligne le lien au survol */
+}
+.separator {
+    width: 3px;
+    background-color: rgb(255, 255, 255);
+
+  }
+
+
+  
+  cursor {
+    display: inline-block;
+    color: #ffffff;
+  }
+  
+  .clignote {
+    animation: blink 1s steps(1) infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+
+
+    
+
+
+/* Copyright © 2025 OS Tech Creations. Tous droits réservés   Mentions légales    Politique de confidentialité*/
+.centreMle{
+
+
+    margin: 0 10px 10px 10px;
+}
+.centreMlegal{    
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color:#ffffff;
+    padding: 20px;
+    border-radius: 50px; /* arrondi doux */
+    overflow: hidden; /* important pour que l'iframe respecte l'arrondi */
+}
+.centreMlegal p{    
+        
+    margin: 0 ;
+}
+.centreMlegal a{    
+
+    color: rgb(0, 0, 0); 
+    padding-left: 30px;
+}
+.centreMlegal a:hover {
+    color: rgb(0, 0, 0); 
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+
+@media screen and (max-width: 1100px) {
+    .centreFooter{
+        gap: 20px;  
+    }
+   
+    .centrerlogo{
+
+        top: -455px;       
+        left: 43px;       
+      }
+      
+}
+
+@media screen and (max-width: 970px) {
+   
+    .carte-3d {
+        z-index: 1;
+      }
+    .centrerlogo{
+        position: static; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        margin-bottom: 0px;
+        border: none;
+    box-shadow: none;
+    height: min-content;
+    padding: 100px 10px 0px 10px;
+    gap: 20px;                   /* espace entre les blocs */
+      }
+      .centreLogo{
+        position: static; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        
+    padding: 0px 50px 0px 50px;
+      }
+
+    .centreFooter{
+        gap: 0px;  
+        padding: 70px 10px 70px 10px;
+    }
+    .separatorG {
+        margin: 0px 20px 0px 0px;
+    }
+    .separatorD {
+        margin: 0px 0px 0px 20px;
+    }
+}
+@media screen and (max-width: 850px) {
+    
+    .centreFooter{
+        gap: 20px;  
+    }
+    .separatorG {
+        margin: 0px 0px 0px 0px;
+    }
+    .separatorD {
+        margin: 0px 0px 0px 0px;
+    }
+    .centreFooter{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px; 
+    }
+    .separator {
+        width: 60%;
+        height: 2px;
+        background-color: white;
+    
+      }
+    .centreMlegal{
+        padding-left: 25px;
+        padding-right: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .centreMlegal a{    
+
+        padding-left: 0px;
+    }
+    .centreMlegal p{    
+        
+        margin: 0 0 15px 0;
+    }
+    .centreMlegal{    
+        padding: 35px 20px 35px 20px;
+     }
+}
+
+@media screen and (max-width: 650px) {
+    .centreMlegal{    
+        padding: 50px 20px 50px 20px;
+     }
+    .centreMlegal a{    
+        font-size: 14px;
+    }
+    .centreMlegal p{    
+        font-size: 14px;
+    }
+   
+   
+      .centreLogo{
+        
+        padding: 0px 10px 0px 10px;
+      }
+
+}
+
+@media screen and (max-width: 640px) {
+    .footer-button {
+        margin: 0px 30px 30px 30px;
+    }
+    .divpub h3{
+
+        font-size: 28px;
+        
+        padding: 50px;
+    }
+}
+@media screen and (max-width: 485px) {
+    
+    #cornerblock {
+        font-size: 22px;
+    }
+    .footer-button{
+        
+        font-size: 22px;
+    }
+    .centrerlogo{
+    
+        border-radius: 0px;
+        box-shadow: none;
+      border: 0px; /* contour léger */
+        width: 100%;
+    }
+      
+}
+@media screen and (max-width: 430px) {
+    .separator {
+        width: 80%;
+        height: 2px;
+        background-color: white;
+    
+      }
+      
+    .centreMlegal a{    
+        font-size: 12px;
+    }
+    .centreMlegal p{    
+        font-size: 12px;
+    }
+    #cornerblock {
+        font-size: 18px;
+    }
+    .footer-button{
+        
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 380px) {
+
+    .centreMlegal a{    
+        font-size: 10px;
+    }
+    .centreMlegal p{    
+        font-size: 10px;
+    }
+    #cornerblock {
+        font-size: 14px;
+    }
+    .footer-button{
+        
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,76 @@
+/* id="div1" */
+
+.line{
+    background-color: rgb(20, 20, 20);
+    position: absolute;
+    z-index: 3;
+}
+.tres2{
+    width: 3px;
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+z-index: 3;
+    left: 100px;
+    top: -100px;
+}
+.tres3{
+    width: 3px;
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+z-index: 3;
+    left: 50%;
+    top: -1100px;
+}
+.tresFond1{
+    width: 100vh;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+z-index: 0;
+    top: 50%;
+}
+.tresFond2{
+    width: 3px;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+z-index: 0;
+    left: 20%;
+}
+.tresFond3{
+    width: 3px;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+z-index: 0;
+    left: 80%;
+}
+
+
+/* 
+function addRandomLines(divId, numberOfLines) {
+    const div = document.getElementById(divId);
+
+    for (let i = 0; i < numberOfLines; i++) {
+        const line = document.createElement('div');
+        line.classList.add('line');
+    
+        if (Math.random() > 0.5) {
+            // Créer une ligne horizontale
+            line.style.width = '100%';
+            line.style.height = '2px';
+            line.style.top = (10 + Math.random() * 80) + '%'; // Position entre 10% et 90%
+        } else {
+            // Créer une ligne verticale
+            line.style.width = '2px';
+            line.style.height = '100%';
+            line.style.left  = (10 + Math.random() * 80) + '%'; // Position entre 10% et 90%
+        }
+
+        div.appendChild(line);
+    }
+}
+addRandomLines('div1', 5); // Ajoute 5 lignes aléatoires au div1
+addRandomLines('div2', 3); */

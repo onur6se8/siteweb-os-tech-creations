@@ -1,0 +1,242 @@
+
+.videoStartUp{
+    
+    height: 700px;
+}
+.videoStartUp video{
+    height: 100%;
+    flex-grow: 1;
+    
+} 
+
+
+.tarifs{
+
+    text-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5); 
+    background-color: rgba(35, 83, 138, 0.214); 
+
+    border-radius: 40px; 
+}
+
+.centreTitre{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    color: #fff;
+    padding-top: 30px;
+}
+
+
+
+
+.services {                 /* Section Div */
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;   
+}
+.service {
+    position: relative;
+    z-index: 6;
+    width: 330px;
+    height: 200px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: #323334;
+    border: 1px solid #484848;
+    overflow: hidden;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
+}
+
+.service-details {
+  
+    transition: transform 1s ease, opacity 1s ease, max-height 1s ease-out;
+    transform: translateY(200px); /* Déplacer en haut pour le centrage */
+    opacity: 0;
+}
+.service.active .service-details, .service:hover .service-details {
+    
+    top: 0px; /* Alignement au centre */
+    transform: translateY(7px); /* Déplacer en haut pour le centrage */
+    opacity: 1; /* Rendre visible */
+    max-height: 200px;
+}
+.service h3 {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    transform: translateY(0px); 
+    transition: transform 1s ease, opacity 1s ease, max-height 1s ease-out;
+    opacity: 1; 
+    
+}
+.service:hover h3,.service.active h3  {
+   
+    transform: translateY(-200px); /* Déplacement vers le haut */
+    opacity: 0; 
+}
+
+
+
+
+
+
+.fondEtoiler{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background-image: linear-gradient(to bottom, #000000, #00000042, #25262700, #00000042, #000000);
+}
+.imageCentre{
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+.fondEtoiler2{
+    background-size: cover;
+    width: 100%;
+    background-image: linear-gradient(to top, #191919, #19191983, #19191900, #19191984, #191919), url('/page/image/etoile.jpg');
+    background-position: center;
+}
+
+
+
+
+
+
+
+.animationMobile {
+    position: relative;
+    width: 100%;
+    height: 700px; /* Ajustez selon la hauteur nécessaire */
+    overflow: hidden;
+}
+
+.image {
+    position: absolute;
+    bottom: 0; /* Aligner le bas des images */
+    opacity: 0; /* Commencer invisible */
+    transition: all 2s ease;
+}
+
+.image1{
+    left: -25%; /* Commencer à gauche de l'écran */
+    bottom: 50%;
+}
+.image2{
+    left: -25%; /* Commencer à gauche de l'écran */
+    bottom: 10%;
+}
+
+.image3 {
+    left: 125%; /* Commencer à droite de l'écran */
+    
+    bottom: 60%;
+}
+.image4 {
+    left: 125%; /* Commencer à droite de l'écran */
+    bottom: 10%;
+}
+/* Les classes d'animation */
+.ordi {
+    left: 50%; /* Ajustez selon la position finale souhaitée */
+    transform: translateX(-50%);
+    bottom: 200px;
+    opacity: 1;
+}
+.ordiportable {
+    left: 50%; /* Ajustez selon la position finale souhaitée */
+    transform: translateX(-100%);
+    bottom: 200px;
+    opacity: 1;
+}
+.tablette {
+    left: 50%; /* Ajustez selon la position finale souhaitée */
+    transform: translateX(100px);
+    bottom: 200px;
+    opacity: 1;
+}
+.portable {
+    left: 50%; /* Ajustez selon la position finale souhaitée */
+    transform: translateX(200px);
+    bottom: 200px;
+    opacity: 1;
+}
+
+
+
+@media screen and (min-width: 1050px) {
+
+    .services {
+        flex-wrap: nowrap;
+    }
+
+    
+}
+
+@media screen and (min-width: 1280px) {
+    
+
+    .servicesParent {
+      
+        position: relative;
+        height: 700px;
+    }
+
+    .enfant{
+   
+        position: absolute;
+        left: 700px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 750px) {
+
+
+    .service {
+        width: 100%;
+        height: 100%;
+        min-height: 60px;
+    }
+    .service-details {
+        max-height: 0px;
+    }
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+
+    .centreTitre{
+        padding-bottom: 10px;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+
+    .service {
+        margin: 0px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,610 @@
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    
+     background-color: #0d0d0d;
+
+  margin-top: 10px;
+    min-width: 300px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    transition: background-color 0.4s ease;
+    padding-top: 30px;
+}
+
+
+.btn{
+    color: #ffffff;
+    width: 150px;
+    height: 65px;
+}
+.dropdown-content a {
+    
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content .dropdown-hover {
+    
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown a:hover { color: #bababa;}
+.show {display: block;
+ border: none;}
+
+
+
+
+
+
+
+
+
+.menu-item {
+  position: relative;
+}
+
+.dropdown-hover {
+  position: relative;
+  display: block;
+  color: white;
+  background-color: transparent;
+  border: none;
+  padding: 12px 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-hover:hover {
+
+  color: #bababa;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: -65px;
+  left: 130px;
+  margin-left: 10px;
+  background-color: #0d0d0d;
+  padding: 10px 0;
+  z-index: 1000;
+  border-radius: 10px;
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
+  border-left: 1px solid white;
+
+}
+
+.menu-item:hover .submenu {
+  display: block;
+}
+
+.submenu a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.submenu a:hover {
+ 
+  color: #bababa;
+}
+/* Hover sur desktop */
+@media (min-width: 1025px) {
+  .menu-item:hover .submenu {
+    display: block;
+  }
+}
+
+/* Affichage actif sur mobile */
+.submenu.active {
+  display: block !important;
+}
+#services-btn:focus {
+
+  box-shadow: none ;
+}
+/* #services-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+} */
+
+.textMenu:hover {
+    
+   text-decoration: none;
+     box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+.positionmenu {
+  position: relative;
+}
+
+.dropdown-menu-item {
+  position: absolute;
+  top: 68px; /* juste sous .positionmenu */
+  left: 230px; /* centré sur l'élément Services */
+  transform: translateX(-50%);
+  display: none;
+ background-color: #0d0d0d;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 999;
+  box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.602);
+}
+
+.dropdown-menu-item.active {
+  display: block;
+}
+
+.submenu-desktop a {
+  display: block;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.textMenu:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+
+    /* background-color: #101418; */
+    /* background-color: #0d1115; */
+    /* background-image: linear-gradient(to right, #2c2d2e, #252627, #252627 , #252627,   #1f2022 ); */
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    background-color: #000000;
+}
+
+.separation{
+
+    height: 1px;
+    width: 100%;
+    background-color: white;
+}
+
+
+.image-button {
+    background: url("/page/image/logo222Tra.png") no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
+
+    
+}
+
+
+.logo{
+
+    border-radius: 100%;
+    height: 38px;
+    width: 38px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+    margin: 5px;
+}
+
+.menu:hover{
+    background-color: #0d0d0d;
+}
+
+
+.lienaucentre{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.logo-container {
+    position: relative;
+    height: 80px;
+    width: 200px;
+    overflow: hidden;
+    color: #ffffff;
+    margin: 0px 20px 0px 50px;
+  }
+  
+  .brand-text, .brand-logo {
+    position: absolute;
+    
+    transition: all 0.5s ease;
+
+
+  }
+  
+  /* Texte initial */
+  .brand-text {
+    top: 23px;
+    left: 0px;
+    opacity: 1;
+    font-size: 24px;
+    font-family: 'Cormorant Garamond';
+  }
+  
+  /* Logo initial (au-dessus et invisible) */
+  .brand-logo {
+    top: -100%;
+    left: 60px;
+    opacity: 0;
+    height: 45px;
+    border-radius: 100%;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .menu:hover .brand-text {
+    top: 100%;
+    opacity: 0;
+  }
+  
+  .menu:hover .brand-logo {
+    top: 18px;
+    opacity: 1;
+  }
+
+.dropbtn {
+   
+    margin: 15px;
+    margin-left: 20px;
+    padding: 13px;
+    font-size: 16px;
+    border: none; cursor: pointer;
+}
+
+.menuMilieu{
+    display: none;
+}
+
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: #191919d5;
+    
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.602);
+    backdrop-filter: blur(10px); /* flou arrière */
+  -webkit-backdrop-filter: blur(10px); /* pour Safari */
+
+    border-radius: 50px;
+    margin: 10px;
+    transition: background-color 0.9s ease;
+
+}
+.menu22{
+
+    background-color: #0d0d0d;
+}
+
+
+
+
+.textMenu{
+    
+    color: white;
+    font-size: 20px;
+    width: 150px;
+
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+   
+    background-color: transparent;
+    border: 0px solid transparent;
+
+        font-family:  "Segoe UI";
+  box-shadow: none;
+ padding-top: 5px;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s
+}
+
+
+nav {
+	margin: 0px auto 0;
+
+	position: relative;
+	width: 600px;
+	height: 40px;
+	border-radius: 8px;
+	font-size: 0;
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+nav .animation {
+	position: absolute;
+	height: 2px;              /* c'est ici si je veux changer le début de l'animation de la ligne qui désine si je clique bien sur accueil ou un autre menu  */
+	top: 38px;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+
+nav:hover .start-home, a:nth-child(1):hover~.animation {
+    width: 100px;
+    height: 2px;
+    left: 25px;
+    top: 38px;
+    background-color: white;
+}
+
+
+nav .start-about, a:nth-child(2):hover~.animation {
+	width: 100px;
+    height: 2px;
+	left: 175px;
+    top: 38px;
+    background-color: white;
+
+}
+nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 100px;
+    height: 2px;
+	left: 325px;
+    top: 38px;
+    background-color: white;
+}
+nav .start-portefolio, a:nth-child(4):hover~.animation {
+	width: 100px;
+    height: 2px;
+	left: 475px;
+    top: 38px;
+	background-color: white;
+}
+
+.divPrenonsContact{
+
+
+   width: 190px;
+    margin: 15px;
+    margin-right: 30px;
+    padding: 10px 15px 10px 15px;
+    background-color: #ffffff00;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+     transition: background-color 0.6s ease;
+}
+.divPrenonsContact a{
+
+    color: #ffffff;
+}
+.divPrenonsContact:hover {
+
+   background-color: #ffffff;
+}
+.divPrenonsContact:hover a{
+
+    color: #000000;
+    text-decoration: none;
+}
+
+.sticky-menu {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    transition: transform 0.4s ease-out, background-color 0.4s ease;
+}
+
+.sticky-menu.hidden {
+  transform: translateY(-150%);
+}
+
+
+.contienmenumilieu{
+
+    display: flex;
+    flex-direction: row;
+     flex: 1;
+}
+
+.contact-info  {      /*  liens insta linkedin  -------------------------------------------------- */
+    min-width: 186px;
+  display: flex;
+    justify-content: center;     /* centre les blocs horizontalement dans le footer */
+    align-items: center; 
+    z-index: 1000;
+    height: 100%;
+
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+}
+
+.lienadroite {
+ 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; 
+    padding-right: 50px;
+}
+
+.lienadroite a {
+    color: #ffffff; /* Couleur du lien */
+    margin: 0 8px; /* Marge entre les liens */
+    text-decoration: none; /* Supprime le soulignement par défaut du lien */
+}
+.lienadroite a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+span {
+    color: #ffffff;
+}                          /*  liens insta linkedin         ------------------------------------------*/
+
+
+@media screen and (max-width: 1400px) {
+
+.lienadroite {
+ 
+    padding-right: 25px;
+}
+    
+}
+
+@media screen and (max-width: 1310px) {
+
+    .lienadroite {
+    
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 1130px) {
+
+    .contact-info{
+
+        font-size: 16px;
+    }
+    .divPrenonsContact{
+
+
+        width: 190px;
+        margin: 15px;
+    }
+
+    .contienmenumilieu{
+
+        justify-content: right;    
+       
+
+    }
+
+    .lienadroite {
+    
+        display: block;
+    }
+}
+@media screen and (max-width: 600px) {
+
+
+    .lienadroite {
+ 
+        display: none;
+    }
+}
+
+
+
+@media screen and (min-width: 1130px) {
+
+    .dropdown {
+        display: none;
+    }
+  
+    .menuMilieu{
+    
+        display: flex;
+        align-items: center;
+    }
+
+   
+}
+
+
+
+
+@media screen and (min-width: 1200px) {
+  
+
+ 
+
+    .menuMilieu{
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      flex: 1;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+  
+
+    .logo-container {
+        margin: 0px 50px 0px 50px;
+      }
+
+}
+
+@media screen and (min-width: 1550px) {
+  
+
+    .logo-container {
+        margin: 0px 100px 0px 50px;
+      }
+
+}
+@media screen and (min-width: 1750px) {
+  
+
+    .logo-container {
+        margin: 0px 200px 0px 50px;
+      }
+
+}

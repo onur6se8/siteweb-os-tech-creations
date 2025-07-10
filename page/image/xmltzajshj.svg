@@ -1,0 +1,20 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <path d="
+    M0,0
+    H500
+    V500
+    H0
+    V0
+    Z
+    M50,0
+    Q0,0 0,50
+    L0,450
+    Q0,500 50,500
+    L450,500
+    Q500,500 500,450
+    L500,50
+    Q500,0 450,0
+    L50,0
+    Z
+  " fill="white" fill-rule="evenodd"></path>
+</svg>

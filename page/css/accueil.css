@@ -1,0 +1,447 @@
+
+
+
+
+
+.aLaUne{
+
+    margin-top: 50px;
+    flex-grow: 1;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: right;
+    background-color: #000000;
+    position: relative;
+}
+
+
+.textAlaUne{
+   
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #1919195e,  #0a1320a4  );
+    text-align: center;
+    z-index: 50;
+    border: 1px solid #2c2c2c;
+    margin-top: 70px;
+    width: max-content;
+    position: relative;
+    left: 50px;
+    
+}
+
+.textAlaUne h1{
+    font-size: 50px;
+}
+.textAlaUne h2{
+    font-size: 40px;
+}
+.videoMonde{
+    width:  100%;
+    max-width: 1000px;
+    position: relative;
+    z-index: 7;
+}
+.photoMonde{
+    margin-top: 30px;
+    width:  50%;
+    max-width: 540px;
+    position: absolute;
+   z-index: 6;
+   top: -30px;
+    right: 240px;
+}
+.imageQuiTienLaTerre{
+    width:  78%;
+    max-width: 780px;
+}
+
+
+#monde-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#monde-container canvas {
+  aspect-ratio: 1 / 1;
+
+  display: block;
+}
+
+#montre-container {
+  width: 100%;
+
+  height: 640px; /* ou auto + aspect-ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#montre-container canvas {
+  aspect-ratio: 1 / 1;
+
+  display: block;
+}
+
+#robot-container {
+  width: 100%;
+
+  height: 800px; /* ou auto + aspect-ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#robot-container canvas {
+  aspect-ratio: 1 / 1;
+
+  display: block;
+}
+
+
+
+.fondEtoiler{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    /*  background-image: linear-gradient(to bottom, #000000, #0000005f, #25262700, #1919194e, #191919);*/
+    background-image: linear-gradient(to bottom, #000000, #0000005f, #25262700, #0000005f, #000000);
+}
+
+
+
+.mesCompetences li{
+    color: #6882c2 ;
+    font-size: 18px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.couleurgris{
+    color: #5ba65f;
+}
+
+.paddinDiv{
+    padding: 20px;
+			padding-left: 40px;
+}
+.nuageFixe{
+    background-color:#191919ed;
+    border: 1px solid #2c2c2c;
+    color: white;
+    z-index: 5;
+    
+    border-radius: 20px;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
+}
+.nuage{
+    
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+    z-index: 5;
+    background-color: #323334;
+    border-radius: 20px;
+    margin: 10px;
+    border: 1px solid #484848;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5); /* Ombre portée */
+
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;
+}
+.dimensionNuage1{
+    width: 330px;
+        height: 150px;
+}
+.dimensionNuage2{
+    width:  680px;
+    height: 150px;
+}
+
+
+.nuage h3 {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    transform: translateY(0px); 
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 1; 
+}
+.nuage:hover h3,.nuage.active h3  {
+   
+    transform: translateY(-200px); /* Déplacement vers le haut */
+    opacity: 0; 
+}
+
+.service-details {
+    padding: 20px;
+    text-align: left;
+    transition: transform 1s ease, opacity 1s ease, max-height 1s ease-out;
+    transform: translateY(200px); /* Déplacer en haut pour le centrage */
+    opacity: 0;
+}
+.nuage.active .service-details, .nuage:hover .service-details {
+    
+    top: 0px; /* Alignement au centre */
+    transform: translateY(7px); /* Déplacer en haut pour le centrage */
+    opacity: 1; /* Rendre visible */
+    max-height: 400px;
+}
+
+
+.mesCompetences{
+    padding: 30px;
+    max-width: 600px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+.competences{
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+.aDroite{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+.nuageFixe h3{
+    padding-top: 30px;
+}
+
+
+.centreTitre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    color: #fff;
+    padding-top: 30px;
+    width: 100%;
+}
+.tarifs{
+
+    text-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.149);
+    
+    padding: 50px 50px 10px 50px; 
+    margin: 20px;
+    backdrop-filter: blur(10px); /* flou arrière */
+  -webkit-backdrop-filter: blur(10px); /* pour Safari */
+    border-radius: 50px; 
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+}
+.element-transition-bas {
+    transform: translateY(0);
+  transition: transform 3.5s ease;
+}
+
+.tarifs a{
+
+    font-size: 35px;
+    color: white;
+}
+.tarifs a:hover{
+
+    color: hsl(215, 100%, 75%);
+    text-decoration: none;
+    
+}
+.imgCertifier{
+    max-width:500px; 
+
+    margin: 20px;
+    margin-right: 40px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 14px rgba(0, 0, 0, 0.5);
+    border: 1px solid #ffffff;
+}
+
+.textCertifier{
+    padding: 30px; 
+    padding-bottom: 10px; 
+    text-align: left;
+    max-width: 800px ;
+}
+
+    .padingCertifier{
+        padding: 20px;
+    }
+
+    .certivierAdroite{
+        display: flex;
+        justify-content: space-between; 
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+
+    
+@media screen and (max-width: 1650px) {
+   
+    .textAlaUne h1{
+        font-size: 43px;
+    }
+    .textAlaUne h2{
+        font-size: 33px;
+    }
+}
+@media screen and (max-width: 1350px) {
+
+    .flexWrap1{
+        flex-wrap: wrap;
+    }
+
+}
+@media screen and (max-width: 1250px) {
+  
+    .textAlaUne h1{
+        font-size: 30px;
+    }
+    .textAlaUne h2{
+        font-size: 27px;
+    }
+    
+}
+@media screen and (max-width: 1075px) {
+   
+    .photoMonde{
+        right: 25%;
+    }
+    .textAlaUne{
+   
+        padding: 20px;
+        margin-left: 20px;
+        border-radius: 20px;
+        background-image: linear-gradient(to right, #1919195e,  #080f1977  );
+        text-align: center;
+        z-index: 50;
+        border: 1px solid #2c2c2c;
+        margin-top: 70px;
+        width: max-content;
+        position: static;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .textAlaUne h1{
+        font-size: 28px;
+    }
+    .textAlaUne h2{
+        font-size: 25px;
+    }
+    .tarifs{
+
+        padding: 30px 30px 10px 30px; 
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+    .textAlaUne h1{
+        font-size: 26px;
+    }
+    .textAlaUne h2{
+        font-size: 23px;
+    }
+    .dimensionNuage1{
+        width: 330px;
+        height: 150px;
+    }
+    .dimensionNuage2{
+        width:  680px;
+        height: 150px;
+    }
+    .nuage{
+        margin: 10px;
+    }
+
+    .paddinDiv{
+        padding: 0px;
+    }
+}
+@media screen and (max-width: 750px) {
+
+    .textAlaUne h1{
+        font-size: 24px;
+    }
+    .textAlaUne h2{
+        font-size: 22px;
+    }
+    
+    .imgCertifier{
+        width:100%; 
+        
+        margin: 0px;
+    }
+   
+    .dimensionNuage1{
+        width: 100%;
+        height: 100%;
+        min-height: 60px;
+    }
+    .dimensionNuage2{
+        width:  100%;
+        height: 100%;
+        min-height: 60px;
+    }
+    .service-details {
+        max-height: 0px;
+    }
+}
+@media screen and (max-width: 650px) {
+
+    .textAlaUne h1{
+        font-size: 23px;
+    }
+    .textAlaUne h2{
+        font-size: 21px;
+    }
+    .textAlaUne {
+        max-width: 180px;
+    }
+    .textCertifier{
+        padding: 20px; 
+        margin: 0px;
+    }
+}
+@media screen and (max-width: 450px) {
+
+    .textAlaUne h1{
+        font-size: 20px;
+    }
+    .textAlaUne h2{
+        font-size: 19px;
+    }
+    .mesCompetences{
+        padding: 10px;
+    }
+    .nuageFixe h3{
+        padding-top: 10px;
+    }
+    .competences{
+        padding: 10px;
+    }
+
+    .aggrandiTel{
+        background-color: #000000;
+       height: 100px;
+    }
+}
+@media screen and (max-width: 350px) {
+
+}

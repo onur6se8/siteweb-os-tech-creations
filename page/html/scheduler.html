@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Scheduler</title>
+	<link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<style>
+
+		body {
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.divPrincipal{
+			padding: 15px;
+		}
+
+		.divREQ{
+			max-width: 1300px;
+			padding-top: 8px;
+			display: flex;
+    		flex-wrap: wrap; 
+		}
+
+		.divMargin{
+			margin-left: 5px;
+		}
+
+		.input {
+			max-width: 280px;
+			min-width: 280px;
+			display: block;
+			padding: 5px 5%;
+			border:1px solid #ccc;
+			border-radius: 27px;
+			background-color: #fff;
+		}
+		
+		.inp2 {
+			max-width: 428px;
+			min-width: 428px;
+			min-height: 34px;
+			display: block;
+			padding: 5px 5%;
+			border:1px solid #ccc;
+			border-radius: 27px;
+			background-color: #fff;
+		}
+		.inp {
+			max-width: 690px;
+			min-width: 690px;
+			display: block;
+			padding: 5px 5%;
+			border:1px solid #ccc;
+			border-radius: 27px;
+			background-color: #fff;
+		}
+		.inpp {
+			max-width: 370px;
+			min-width: 370px;
+			display: block;
+			padding: 5px 5%;
+			border:1px solid #ccc;
+			border-top-left-radius: 27px;
+			border-bottom-left-radius: 27px;
+			background-color: #fff;
+		}
+		.ut {
+			max-width: 45px;
+			min-width: 45px;
+			display: block;
+			padding: 5px 5%;
+			border:1px solid #ccc;
+			border-top-right-radius: 27px;
+			border-bottom-right-radius: 27px;
+
+			color: #fff;
+			background-color:#048b9a;
+		}
+		.to{
+			max-width: 414px;
+			min-width: 414px;
+			display: block;
+			padding: 5px 5%;
+			border:1px solid #ccc;
+			border-radius: 27px;
+			background-color: #fff;
+			
+			position: relative;
+			left: 0px;
+			top: -30px;
+		}
+
+		/* p */
+		.element
+		{
+			color:#565656;
+			height: min-content;
+			width:fit-content;
+			padding-left: 10px;
+			padding-right: 10px;
+			position: relative;
+			left: 20px;
+			top: -51px;
+
+			display: block;
+			border-radius: 27px;
+			background-color:#fff;
+			font-size: 105%;
+			letter-spacing: .8px;
+		}
+
+		/* Variables du template */
+		.variable
+		{
+			position: relative;
+			left: 20px;
+			font-size: 15px;
+			font-weight: bold;
+		}
+
+		/* Mail destinataires, bouton suppr (petit croix) */
+		.supr {
+			border: none;
+			color: white;
+			margin: 5px;
+			padding: 6px 8px;
+			font-size: 8px;
+			cursor: pointer;
+		}
+		.supr:hover {
+			background-color: rgba(200,200,200,0.8);
+		}
+		.fond { background-color: rgba(230,230,230,0.8); margin: 4px; padding:4px; border:0; box-shadow:0 0 15px 4px rgba(0,0,0,0.06); border-radius:10px;}	
+		
+		.pTemplate{
+			padding-left: 0px;
+		}
+
+		.template-preview{
+			height: calc(100vh - var(--header-height) - 5px);
+		}
+
+		.template-preview iframe{
+			width: 460px;
+			height: 100%;
+			pointer-events: none;
+		}
+
+		.template-p iframe{
+			width: 460px;
+			height: 500px;
+			pointer-events: none;
+		}
+
+		@media screen and (min-width: 900px) {
+			.pTemplate{
+				padding-left: 50px;
+			}
+			.divREQ{
+				max-width: 1300px;
+				padding-top: 15px;
+				display: flex;
+				flex-wrap: wrap; 
+			}
+			.divMargin{
+				margin-left: 30px;
+			}
+			.input {
+				max-width: 320px;
+				min-width: 320px;
+				display: block;
+				padding: 5px 5%;
+				border:1px solid #ccc;
+				border-radius: 27px;
+				background-color: #fff;
+			}
+		}
+		@media screen and (min-width: 1183px) {
+			.divPrincipal{
+				padding: 35px;
+			}
+			.divREQ{
+				max-width: 1300px;
+				padding-top: 30px;
+				display: flex;
+				flex-wrap: wrap; 
+			}
+			.divMargin{
+				margin-left: 50px;
+			}
+		}
+
+</style>
+
+
+	<div class="divREQ pt-5">
+		<div class="divMargin">
+			<select id="REQ_PROG" name="REQ_PROG" class="input" >
+				<option value ="DATAVISION"  >DATAVISION</option>
+				<option value ="STD_EUREKA"  >STD_EUREKA</option>
+			</select> <p class="element">Programme</p>
+		</div>
+		<div class="divMargin">
+			<input list="dListe" id="REQ_LITE" name="REQ_LITE" class="input"> <p class="element">Identifiant *</p>
+			
+			<datalist id="dListe">
+			</datalist>
+		</div>
+		<div class="divMargin">
+			<input list="dataListe" id="REQ_NDOS" name="REQ_NDOS" class="input"> <p class="element">Dossier *</p>
+			
+			<datalist id="dataListe">
+			</datalist>
+		</div>
+		<div class="divMargin">
+			<input class="text input" type="text" name="REQ_BIBL" id="REQ_BIBL" placeholder=""/><p class="element">Bibliothèque </p>					
+		</div>
+		<div class="divMargin">
+			<input class="text input" type="text" name="REQ_CLAN" id="REQ_CLAN" placeholder=""/><p class="element">Langue</p>
+		</div>
+		<div class="divMargin">
+			<input class="text input" type="text" name="REQ_NB_ENREG" id="REQ_NB_ENREG" placeholder=""/><p class="element">Nombre d’enregistrement</p>
+		</div>
+		<div class="divMargin">
+			<input class="text input" type="text" name="REQ_NUM_PAGE" id="REQ_NUM_PAGE"  placeholder=""/><p class="element">Numéro de page</p>
+		</div>
+		<div class="divMargin">
+			<input class="text input" type="text" name="REQ_VERD" id="REQ_VERD" placeholder=""/><p class="element">Version</p>
+		</div>
+		<div class="divMargin">
+			<input class="text input" type="text" name="REQ_WHERE" id="REQ_WHERE" placeholder=""/><p class="element">Conditions</p>
+		</div>
+	</div>
+
+	<div class="divREQ">
+		<div class="divMargin">
+			<select id="format" name="format" class="input" >
+				<option value ="pdf"  >PDF</option>
+				<option value ="xlsx"  >XLSX</option>
+				<option value ="csv"  >CSV</option>
+			</select> <p class="element">Format</p>
+		</div>
+		<div class="divMargin">
+			<select id="type" name="type" class="input" >
+				<option value ="typeMail">Envoyer un mail</option>
+				<option value ="typeDocument">Enregistrer dans un fichier</option>
+			</select> <p class="element">Type de génération</p>
+		</div>
+	</div>
+
+	<div class="divREQ">
+		<div id="dFichier" class="divMargin">
+			<input class="text inp" type="text" name="chemin" id="chemin" placeholder=""/><p class="element">Chemin *</p>
+		</div>
+	</div>
+	
+
+	<div id="dMail">
+		<div class="divREQ">
+			<div class="divMargin">
+				<input class="input" autocomplete="on" type="email" id="email"/><p class="element">Mail expéditeur *</p>
+			</div>
+			<div class="divMargin">
+				<div class="d-flex">
+					<input class="inpp" autocomplete="on" type="email" id="destinataire"/>
+					<button id="ajouter" class=" btn ut">+</button>
+				</div>
+				<p class="element">Mails destinataires *</p>
+				<div class="to mb-3" id="lesDestinataires">
+	
+				</div>
+			</div>
+		</div>
+	
+		<div class="divREQ pb-5">
+			<div class="divMargin ">
+				<select id="template" name="template" class="inp2" > <!-- Template -->
+				</select> <p class="element">Template</p>
+				<table>
+					<p class="variable">Variables</p>
+					<tbody id="tbody"> <!-- Variable -->
+					</tbody>
+				</table>
+			</div>
+			<div onclick="grandir()" class='template-preview iframe pTemplate' id="iframe"></div>
+		</div>
+	</div>
+
+	<div  class="divREQ">
+		<div class="divMargin">
+			<input type="text" name="reponse" id="reponse" class="inp" placeholder=""/><p class="element">Post traitement </p>
+		</div>
+	</div>
+
+<script>
+
+	let PROTECTION = "";
+	let MOD = "";
+	let GJOR = "";
+	let NDO1 = "";
+	let APPL = "";
+
+	const creer = document.getElementById('submitbtn');
+	let data = ""; 
+
+	const REQ_BIBL = document.getElementById('REQ_BIBL');                 
+	const REQ_CLAN = document.getElementById('REQ_CLAN');
+	const REQ_PROG = document.getElementById('REQ_PROG');
+	const REQ_LITE = document.getElementById('REQ_LITE');                 
+	const REQ_NDOS = document.getElementById('REQ_NDOS');
+	const dListe = document.getElementById('dListe');                 
+	const dataListe = document.getElementById('dataListe');
+	const REQ_NB_ENREG = document.getElementById('REQ_NB_ENREG');
+	const REQ_NUM_PAGE = document.getElementById('REQ_NUM_PAGE');                 
+	const REQ_VERD = document.getElementById('REQ_VERD');
+	const REQ_WHERE = document.getElementById('REQ_WHERE');	
+
+	const format = document.getElementById('format');
+	const type = document.getElementById('type');
+	const dMail = document.getElementById('dMail');
+	const dFichier = document.getElementById('dFichier');
+	const chemin = document.getElementById('chemin');
+	const email = document.getElementById('email');
+
+	const destinataire = document.getElementById('destinataire'); 
+	const ajouter = document.getElementById('ajouter');
+	const lesDestinataires = document.getElementById('lesDestinataires'); 
+	
+	const template = document.getElementById('template');
+	const tbody = document.getElementById('tbody');
+
+	const iframe = document.getElementById('iframe');
+	const reponse = document.getElementById('reponse');
+
+	let to = [];
+	let btnSupr = new Array(); 
+
+	let grand = false; 
+	function grandir() {
+		
+		if (grand) {
+			iframe.className = "template-preview iframe pl-5";
+			grand = false;
+		} else {
+			iframe.className = "template-p iframe pl-5";
+			grand = true;
+		}
+	}
+
+	function initialisationLITE(prog, lite) {
+
+		fetch(`http://eurekapr:4100/LITE?prog=` + prog)
+		.then(response => response.json())
+		.then( function(pp){	
+		
+			let p = pp;
+			let tri = [];
+
+			for (let i in p) { 
+			
+				tri.push(p[i].LITE);
+			};
+
+			tri.sort();
+
+			let option = "";        // on récupere les valeurs de REQ_LITE
+			for (let j in tri) { 
+				for (let i in p) { 
+				
+					if (tri[j] == p[i].LITE) {
+
+						p[i].LITE = p[i].LITE.replace(/ /g, ``);
+						option += "<option value ='" + p[i].LITE +"'> ( " + p[i].LITE +" ) - " + p[i].V5LI + " </option>";
+					}
+				}
+			};
+			
+			dListe.innerHTML = option;
+		
+			if (lite == "false") {
+				REQ_LITE.value = "";
+			} else{
+				REQ_LITE.value = lite;
+			}
+		});
+		
+	}
+
+	fetch(`http://eurekapr:4100/NDOSLDOS`)
+		.then(response => response.json())
+		.then( function(ndos){	
+			
+			let option = "";        // on récupere les valeurs de ndos
+			for (let i in ndos) { 
+
+				option += "<option value ='"+ ndos[i].APPL + "-" + ndos[i].NDOS +"'><p style='width: 200px;' > ( "+ ndos[i].APPL + "-" + ndos[i].NDOS + " ) </p> - " + ndos[i].LDOS + "</option>";
+			};
+			dataListe.innerHTML = option;
+	});
+	
+	fetch(`http://eurekapr:4100/template`)
+		.then(response => response.json())
+		.then( function(d){	
+			
+			let option = "";        // on récupere les valeurs du template 
+			for (let i in d) { 
+
+				option += "<option value ='" + d[i].id +"'>" + d[i].title + " (" + d[i].language+ ") " +"</option>";
+			};
+			template.innerHTML = option;
+
+			iframe.innerHTML = "<iframe src='http://eurekapr:5050/api/mail-templates/preview/" + d[0].id + "' frameborder='0'></iframe>";
+
+			let variables = d[0].variables; // on récupere les variables
+			let tableau = "";
+			for (let i in variables) { 
+				
+tableau += '<tr><td>' + variables[i].key +' </td><td><input class="text input" type="text" id="n'+i+'" value="' + variables[i].value +' "/></td></tr>';
+			};
+			tbody.innerHTML = tableau;
+
+			function enregistrer() {    // on envoie tout les données séléctionner 
+
+				let donner = [];
+				let idTemplate = "";
+				let variables = "";
+				for (let i in d) {           // les variables ne sont toujours pas initialiser donc on les créer
+
+					if (d[i].id == template.value) {
+						
+						idTemplate = d[i].id; // on trouve l'id du template choisi
+						variables = d[i].variables;
+					
+						let n = new Array();       
+						for (let j in variables) { 
+							
+							n[j] = document.getElementById('n'+j);
+						};
+						for (let j in variables) { 
+						
+							variables[j].value = n[j].value; 
+						}
+					}
+				}
+
+				let mailDestinataires = "";
+				for (let i in to) {  // mail destinataires
+			
+					if (mailDestinataires == "") {
+						
+						mailDestinataires += to[i].mail;
+					} else {
+						mailDestinataires += "," + to[i].mail;
+					}
+				};
+
+				let req_where = REQ_WHERE.value.replace(/'/g, `"`);
+				
+				donner.push({
+					"REQ_BIBL": REQ_BIBL.value,
+					"REQ_CLAN": REQ_CLAN.value,
+					"REQ_PROG": REQ_PROG.value,
+					"REQ_LITE": REQ_LITE.value,
+					"REQ_NDOS": REQ_NDOS.value,
+					"REQ_NB_ENREG": REQ_NB_ENREG.value,
+					"REQ_NUM_PAGE": REQ_NUM_PAGE.value,
+					"REQ_VERD": REQ_VERD.value,
+					"REQ_WHERE": req_where,
+
+					"FORMAT": format.value,
+					"TYPE": type.value,
+					"CHEMIN": chemin.value,
+					"MAIL": email.value,
+					"DESTINATAIRES": mailDestinataires,
+					"ID_TEMPLATE": idTemplate,
+					"VARIABLES": JSON.stringify(variables), 
+					"PROTECTION": PROTECTION, 
+					"RETOUR": reponse.value, 
+					"MOD": MOD,
+					"GJOR": GJOR, 
+					"NDO1": NDO1, 
+					"APPL": APPL
+				});
+				
+				data = JSON.stringify(donner);
+
+				fetch(`http://eurekapr:4100/sauvegarder?data=${data}`)
+				.then( function(d){	
+
+				});
+			};
+
+
+			fetch(`http://eurekapr:4100/schedulerReponse`)    
+			.then(response => response.json())
+			.then( function(dd){
+				
+				let wcmd = dd[0].WCMD;
+				wcmd = wcmd.replace(/\§/g, ``);
+				wcmd = wcmd.split("'");
+
+				PROTECTION =  dd[1].PROTECTION;
+				MOD =  dd[1].MOD;
+				GJOR =  dd[1].GJOR;
+				NDO1 =  dd[1].NDO1;
+				APPL =  dd[1].APPL;
+				
+				if (PROTECTION == "plein") {
+					
+					REQ_BIBL.value = wcmd[3];
+					REQ_CLAN.value = wcmd[5];
+					REQ_PROG.value = wcmd[7];
+					REQ_LITE.value = wcmd[9];
+					REQ_NDOS.value = wcmd[11]; 
+					REQ_NB_ENREG.value = wcmd[13];
+					REQ_NUM_PAGE.value = wcmd[15];
+					REQ_VERD.value = wcmd[17];
+					REQ_WHERE.value = wcmd[19];
+				
+					format.value = wcmd[21];
+					type.value = wcmd[23];
+					chemin.value = wcmd[25];
+					email.value = wcmd[27];
+					reponse.value = wcmd[35];
+
+					let mailTab = wcmd[29].split(',');
+					for (let i in mailTab) { 
+
+						to.push({"mail": mailTab[i]});
+					}
+					lesDestinataires.innerHTML = "";
+					for (let i in to) { 
+						
+						lesDestinataires.innerHTML += "<em class='fond'>" + to[i].mail + "<button id='btnSupr"+ i +"' class='btn supr'><i class='fa fa-close'></i></button></em><br>";
+					};
+						
+					btnsuprInit();
+
+					let tplate = wcmd[31].split(" "); // il compe l'espace en trop comme une différence 
+					for (let i in d) {    
+
+						if (d[i].id == tplate[0]) {
+							
+							template.value = d[i].id;
+
+							iframe.innerHTML = "<iframe src='http://eurekapr:5050/api/mail-templates/preview/" + d[i].id + "' frameborder='0'></iframe>";
+
+							let variables = d[i].variables;
+							
+							let test = decodeURIComponent(wcmd[33]);
+							let variablesEnregistrer = JSON.parse(wcmd[33]);
+							
+							let tableau = "";
+							for (let j in variables) { 
+
+								if (variablesEnregistrer[j]) {
+									
+									tableau += '<tr><td>' + variables[j].key +' </td><td><input class="text input" type="text" id="n'+j+'" value="'+ variablesEnregistrer[j].value +' "/></td></tr>';
+							
+								} else {
+
+									tableau += '<tr><td>' + variables[j].key +' </td><td><input class="text input" type="text" id="n'+j+'" value="'+ variables[j].value +' "/></td></tr>';
+								}
+							};
+
+							tbody.innerHTML = tableau;
+						}
+					}
+
+					initialisationLITE(wcmd[7], wcmd[9]);
+					initType(type.value);
+				} else {
+
+					initialisationLITE(REQ_PROG.value, "false");
+					REQ_LITE.value = "";
+				}
+				
+			});
+
+			type.addEventListener('change', function() {  
+
+				initType(type.value);
+			});
+
+			initType(type.value);
+
+			function initType(type) {
+
+				if (type == "typeDocument") {
+					
+					dMail.style.display = "none";
+					dFichier.style.display = "block";
+				} else {
+					dMail.style.display = "block";
+					dFichier.style.display = "none";
+				}
+			}
+			
+			function btnsuprInit() {
+				for (let i in to) { 
+					
+					btnSupr[i] = document.getElementById('btnSupr'+ i);
+
+					btnSupr[i].addEventListener('click', function() { 
+					
+						delete to[i];
+
+						lesDestinataires.innerHTML = "";
+						for (let i in to) { 
+					
+							lesDestinataires.innerHTML += "<em class='fond'>" + to[i].mail + "<button id='btnSupr"+ i +"' class='btn supr'><i class='fa fa-close'></i></button></em><br>";
+						};
+
+						btnsuprInit();
+						enregistrer();
+					});
+				};	
+			}
+
+			ajouter.addEventListener('click', function() {    // Ajouter
+				if (destinataire.value != "") {
+
+					to.push({"mail": destinataire.value});
+
+					lesDestinataires.innerHTML = "";
+					for (let i in to) { 
+						
+						lesDestinataires.innerHTML += "<em class='fond'>" + to[i].mail + "<button id='btnSupr"+ i +"' class='btn supr'><i class='fa fa-close'></i></button></em><br>";
+					};
+
+					btnsuprInit();
+					enregistrer();
+				}
+			});
+
+			REQ_PROG.addEventListener('change', function() {  
+				
+				initialisationLITE(REQ_PROG.value, "false");
+				REQ_LITE.value = "";
+				enregistrer();
+			});
+			REQ_BIBL.addEventListener('change', function() { 
+				enregistrer();
+			});
+			REQ_CLAN.addEventListener('change', function() {  
+				enregistrer();
+			});
+			REQ_LITE.addEventListener('change', function() {  
+				enregistrer();
+			});
+			REQ_NB_ENREG.addEventListener('change', function() {  
+				enregistrer();
+			});
+			REQ_NDOS.addEventListener('change', function() {  
+				enregistrer();
+			});
+			REQ_NUM_PAGE.addEventListener('change', function() { 
+				enregistrer();
+			});
+			REQ_VERD.addEventListener('change', function() {  
+				enregistrer();
+			});
+			REQ_WHERE.addEventListener('change', function() {  
+				enregistrer();
+			});
+			email.addEventListener('change', function() {  
+				enregistrer();
+			});
+			tbody.addEventListener('change', function() { 
+				enregistrer();
+			});
+			format.addEventListener('change', function() { 
+				enregistrer();
+			});
+			type.addEventListener('change', function() {  
+				enregistrer();
+			});
+			chemin.addEventListener('change', function() { 
+				enregistrer();
+			});
+			reponse.addEventListener('change', function() { 
+				enregistrer();
+			});
+
+			template.addEventListener('change', function(e) {  
+				for (let i in d) {                          // on adapte les variables en fonction du template choisi 
+					
+					if (d[i].id == template.value) {
+						
+						iframe.innerHTML = "<iframe src='http://eurekapr:5050/api/mail-templates/preview/" + d[i].id + "' frameborder='0'></iframe>";
+
+						let variables = d[i].variables;
+						let tableau = "";
+						for (let j in variables) { 
+
+							tableau += '<tr><td>' + variables[j].key +' </td><td><input class="text input" type="text" id="n'+j+'" value="'+ variables[j].value +' "/></td></tr>';
+						};
+
+						tbody.innerHTML = tableau;
+						enregistrer();
+					}
+				};
+			});
+		}
+	);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+
+.slider{                                /* slider d'image */
+    position: relative;
+    width: 90%;           /* siiii je veux modifier la taille width faut pas oublier de modifier dans le js aussi */
+    overflow: hidden;
+    border: 1px solid #363636;
+    z-index: 5;
+     border-radius: 20px;
+}
+.slider-item img {
+    width: 90vw;
+}
+.slider-item video {
+    
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.slider-item-photo img {
+    width: 90vw;
+}
+.slider-item-photo video {
+    
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.slider-item2 video {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.slider-nav {
+    position: absolute; /* Position absolue par rapport à .slider-item */
+    bottom: 0; /* Alignez-le en bas de .slider-item */
+    left: 50%; /* Déplacez-le à 50% de la largeur */
+    padding: 6px;
+    transform: translateX(-50%); /* Centrez-le horizontalement */
+    width: auto; /* Ajustez la largeur en fonction du contenu */
+    text-align: center; /* Centrez les liens */
+    z-index: 10;
+}
+.contact-nav {
+    position: absolute; /* Position absolue par rapport à .slider-item */
+    bottom: 0px; /* Alignez-le en bas de .slider-item */
+    left: 0px; /* Déplacez-le à 50% de la largeur */
+}
+.slider-content {
+    display: grid;
+    grid-auto-flow: column;
+    -webkit-transition: transform 4s ease; /* Ajoutez cette ligne pour la transition */
+    transition: transform 4s ease; /* Ajoutez cette ligne pour la transition */
+}
+
+.slider-item {
+    position: relative; /* Permet de positionner les éléments d'overlay par rapport à cette image */
+    width: 90vw;
+    height: 35vw;
+    overflow: hidden;
+    background-color: black;
+    z-index: 5;
+    border-radius: 20px;
+}
+.slider-item-photo {
+    position: relative; /* Permet de positionner les éléments d'overlay par rapport à cette image */
+    width: 90vw;
+    height: 22.6vw;
+    overflow: hidden;
+    background-color: black;
+    z-index: 5;
+    border-radius: 20px;
+}
+.slider-item2 {
+    position: relative; /* Permet de positionner les éléments d'overlay par rapport à cette image */
+    width: 100vw;
+    height: 38vw;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.nav-button {    /* bouton pour changer le slider d'image   */
+    background-color:  #252627;
+    padding: 3px;
+    cursor: pointer;
+    margin: 4px;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+.nav-button:hover {
+    background-color: #fff;
+}              /* bouton pour changer le slider d'image   */
+
+.buttonContact{       /* bouton contacte  */
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1000;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-top-right-radius: 10px;
+    background-color:  #ffffff;
+    transition: all .24s ease-in-out;
+    /*  background-color:#fc4949;background-color:#fcc949;  */
+    padding: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.buttonContact:hover{
+    background-color: rgb(211, 243, 255)
+    
+}          /* bouton contacte  */
+
+
+@media screen and (min-width: 900px) {
+
+    .nav-button {
+        padding: 6px;
+        margin: 6px;
+    }
+}
